@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<h2>Welcome, {{ name }}!</h2>
+<p>Email: {{ email }}</p>
+
+{% if image_url %}
+    <img src="{{ url_for('static', filename=image_url.split('/')[-1]) }}" alt="Profile Image" style="max-width: 200px; height: auto;">
+{% else %}
+    <p>No profile image uploaded.</p>
+{% endif %}
+
+<p>You've successfully logged in.</p>
+{% endblock %}
